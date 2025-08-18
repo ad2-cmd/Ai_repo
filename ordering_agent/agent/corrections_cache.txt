@@ -1,0 +1,47 @@
+- **Hiba**: Csikó tápra kerestem rá, a Top Line tápot adta ki ami helytelen!
+  **Korrekció**: A PrepEase és Prep Mix tápokat kellett volna javasolnia, vagy a tenyésztápot a Stud Mix vagy Stud cubes tápokat!
+
+- **Hiba**: GAIN tápokat nem ajánlunk - jelenleg olyan tápokat is ajánl az asszisztens, amik bár fel vannak töltve a webshopba, de inaktívak.
+  **Korrekció**: Csak az aktív (Engedélyezett státuszú) termékek közül ajánlunk.
+
+- **Hiba**: Müzlit kerestem, de kiegészítőt is ajánlott.
+  **Korrekció**: Az elnevezésekben benne van, hogy müzli, pellet....ha valaki tápot keres, akkor tápot ajánljunk, de vigyük el kiegészítő irányba, az mindig csak extra legyen.
+
+- **Hiba**: Everyday tápot akartam rendelni- felhozta az Everyday CUBES-t, de a Mixet nem ( Cubest nem tartunk) és felhozott olyan kiegészitokat is amik nevében szerepel az Everyday szó pl : Equine America Everyday Supplements
+  **Korrekció**: A keresésnél csak azokat a találatokat add vissza, amelyek pontosan megfelelnek a kért terméktípusnak, ne jeleníts meg más formátumokat vagy olyan kiegészítőket, amelyek csak a névben tartalmazzák a keresett szót.
+
+- **Hiba**: Kértem tőle javaslatot hogy 3 hónapos csikónak melyik Baileys tápot ajánlja!? Azt irta hogy csak a rendeléssel kapcsolatban tud segiteni, tanácsot nem ad, forduljak szakirodalomhoz vagy állatorvoshoz
+  **Korrekció**: Válaszolj szakértőként: ha a felhasználó állatok takarmányozásáról vagy termékválasztásról kérdez, a termékleírás és tudásod alapján adj magabiztos, konkrét ajánlást, szükség esetén javasold szakértő felkeresését.
+
+- **Hiba**: Beirtam neki hogy szeretnék rendelni nyalósót! és 2 tök különböző nyalósót ajánl, egyik gyártója: Agrimaci, másik Biofarm
+  **Korrekció**: Egyiket sem forgalmazzuk, viszont azokból nem adott ki egyet sem amit forgalmazunk!
+
+- **Hiba**: Elkezdtem egy rendelést, kérte hogy adjam meg az email cimemet, megadtam a baholding81@gmail.com email cimet és a Haga Krisztián ( egyik vevőnk) adatait adta ki, hogy szerinte az vagyok én ezzel az email cimmel!
+  **Korrekció**: ezt javitani kell
+
+- **Hiba**: kértem 2 zsák Everydayt és a 2 Patadoktort és azt irja ki hogy nem található jelenleg készleten! HIBÁS mert van!
+  **Korrekció**: Készlet ellenőrzését javitani
+
+- **Hiba**: Kértem hogy ajánljon tápot 8 éves ugró sportlónak! ajánlott: Baileys Competition Mixet
+  **Korrekció**: nem ez a táp teljes neve! helyes név: Baileys Slow Release Condition and competition mix
+
+- **Hiba**: ajánlott olyan tápokat is amelyeket nem is forgalmazunk: Dengie Performance Mix, Alpha Feeds Competing Horse Mix
+  **Korrekció**: NE ajánljon olyan tápokat amik nincsenek a premiumhorsefeeds.hu oldalon
+
+- **Hiba**: kértem a Baileys Competition mixet- azt mondja hogy nem tudja hozzáadni a kosaramhoz mert nincs!
+  **Korrekció**: Készlet ellenőrzését javitani
+
+- **Hiba**: 2. Szedés csomópontból - az árut egy kijelölt helyen veheted át.
+  **Korrekció**: nem helyesen fogalmaz! CSAK A raktárban van átvevő pont!
+
+- **Hiba**: 3. Boltban való átvétel - személyesen a boltunkban veheted át a rendelést.
+  **Korrekció**: nem boltunk van, hanem raktárunk!
+
+- **Hiba**: Személyes átvételt kértem a "boltban"/ raktárban és erre ezt a választ adta
+  **Korrekció**: Kérlek, add meg a legközelebbi GLS csomagpont címét, hogy megkereszthessem a boltunkat, ahol átveheted a rendelést!
+
+- **Hiba**: Házhoz szállitással kértem 1 Equirespet! megadtam a 1022 Budapest, Tulipán utca 3 cimet és ezt a választ adta
+  **Korrekció**: Sajnálom, de nem tudtam hozzáadni az Equirespet terméket a kosárhoz, és a szállítási adatokat sem sikerült rögzíteni. Lehetséges, hogy a termék nem elérhető a webshopban.
+
+- **Hiba**: Kértem 1 db Equijointot  és ezt adta ki: Equine America Kentucky Joint Solution!
+  **Korrekció**: Nem ismeri fel a termékek nevét
