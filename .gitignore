@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.python-version
+
+# Virtual environments
+.venv
+
+# Dotenv
+.env
+
+# Custom folders
+qdrant_storage/
+mysql_storage/
+video_recordings/
+print-label-storage/
+
+# Credentails
+*service-account*
+
+# Cache
+*cache*
+corrections.txt
+system_prompts.json
+
+# Node stuff
+node_modules

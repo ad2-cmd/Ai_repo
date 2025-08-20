@@ -1,0 +1,112 @@
+include:
+    - ./ordering_agent/docker-compose.prod.yml
+
+services:
+    qdrant:
+        image: qdrant/qdrant
+        # ports:
+        #     - '6333'
+        #     - '6334'
+        volumes:
+            - qdrant-data:/qdrant/storage
+        restart: unless-stopped
+
+    mysql:
+        image: mysql
+        # ports:
+        #     - '3306'
+        environment:
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+            - MYSQL_DATABASE=${MYSQL_DATABASE}
+        volumes:
+            - mysql-data:/var/lib/mysql
+        restart: unless-stopped
+
+    storage_automation:
+        image: registry.gitlab.pomscloud.ie/peter.csordas/premium-horse-feed/storage_automation
+        build:
+            context: ./storage
+            dockerfile: Dockerfile
+        environment:
+            - OPENAI_API_KEY=${OPENAI_API_KEY}
+            - OPENAI_ORGANIZATION=${OPENAI_ORGANIZATION}
+
+            - QDRANT_URL=http://qdrant:6333
+            - QDRANT_COLLECTION_PRODUCTS=${QDRANT_COLLECTION_PRODUCTS}
+            - QDRANT_COLLECTION_CUSTOMERS=${QDRANT_COLLECTION_CUSTOMERS}
+            - QDRANT_COLLECTION_SHIPPING_METHODS=${QDRANT_COLLECTION_SHIPPING_METHODS}
+            - QDRANT_COLLECTION_PAYMENT_METHODS=${QDRANT_COLLECTION_PAYMENT_METHODS}
+
+            - MYSQL_HOST=mysql
+            - MYSQL_USER=${MYSQL_USER}
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+            - MYSQL_DATABASE=${MYSQL_DATABASE}
+
+            - SHOPRENTER_API_BASE_URL=${SHOPRENTER_API_BASE_URL}
+            - SHOPRENTER_API_USER=${SHOPRENTER_API_USER}
+            - SHOPRENTER_API_PASS=${SHOPRENTER_API_PASS}
+
+            - DEBUG=${DEBUG}
+
+            - UPDATE_STORAGE=${UPDATE_STORAGE}
+            - UPDATE_MYSQL=${UPDATE_MYSQL}
+            - UPDATE_QDRANT=${UPDATE_QDRANT}
+        restart: unless-stopped
+
+    gls_print_label_backend:
+        image: registry.gitlab.pomscloud.ie/peter.csordas/premium-horse-feed/gls_print_label_backend
+        build:
+            context: ./gls_print_label
+            dockerfile: Dockerfile.prod
+        environment:
+            - GLS_CLIENT_NUMBER=${GLS_CLIENT_NUMBER}
+            - GLS_USERNAME=${GLS_USERNAME}
+            - GLS_PASSWORD=${GLS_PASSWORD}
+            - VITE_GLS_BACKEND_URL=${VITE_GLS_BACKEND_URL}
+
+            - BACKORDER_GUIDE_SPREADSHEET_ID=${BACKORDER_GUIDE_SPREADSHEET_ID}
+            - BACKORDER_GUIDE_SPREADSHEET_GID=${BACKORDER_GUIDE_SPREADSHEET_GID}
+
+            - MAIL_MAILER=${MAIL_MAILER}
+            - MAIL_DRIVER=${MAIL_DRIVER}
+            - MAIL_HOST=${MAIL_HOST}
+            - MAIL_PORT=${MAIL_PORT}
+            - MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}
+            - MAIL_FROM_NAME=${MAIL_FROM_NAME}
+            - MAIL_USERNAME=${MAIL_USERNAME}
+            - MAIL_PASSWORD=${MAIL_PASSWORD}
+            - MAIL_ENCRYPTION=${MAIL_ENCRYPTION}
+
+            - XXL_LOGISTICS_BASE_URL=${XXL_LOGISTICS_BASE_URL}
+            - XXL_LOGISTICS_EMAIL=${XXL_LOGISTICS_EMAIL}
+            - XXL_LOGISTICS_PASSWORD=${XXL_LOGISTICS_PASSWORD}
+
+            - QDRANT_URL=${QDRANT_URL}
+            - QDRANT_COLLECTION_FOXPOST=${QDRANT_COLLECTION_FOXPOST}
+
+            - MYSQL_HOST=mysql
+            - MYSQL_USER=${MYSQL_USER}
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+            - MYSQL_DATABASE=${MYSQL_DATABASE}
+
+            - DEBUG=${DEBUG}
+        # ports:
+        #     - '8002'
+        restart: unless-stopped
+
+    frontend:
+        image: registry.gitlab.pomscloud.ie/peter.csordas/premium-horse-feed/frontend
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile.prod
+        environment:
+            - VITE_BACKEND_URL=http://ordering_agent:8001
+            - VITE_GLS_BACKEND_URL=http://gls_print_label_backend:8002
+            - VITE_PORT=${VITE_PORT}
+        ports:
+            - '${VITE_PORT}:80'
+        restart: unless-stopped
+
+volumes:
+    qdrant-data:
+    mysql-data:
