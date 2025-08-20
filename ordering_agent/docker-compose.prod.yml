@@ -1,0 +1,42 @@
+services:
+    ordering_agent_agent:
+        image: registry.gitlab.pomscloud.ie/peter.csordas/premium-horse-feed/ordering_agent_agent
+        build:
+            context: ./agent
+            dockerfile: Dockerfile.prod
+        # ports:
+        #     - '8001'
+        environment:
+            - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+            - OPENROUTER_BASE_URL=${OPENROUTER_BASE_URL}
+
+            - CLAUDE_API_KEY=${CLAUDE_API_KEY}
+
+            - OPENAI_API_KEY=${OPENAI_API_KEY}
+            - OPENAI_ORGANIZATION=${OPENAI_ORGANIZATION}
+
+            - MCP_SERVER_URL=http://ordering_agent_mcp_server:8000
+            - FRONTEND_URL=http://ordering_agent_frontend:${VITE_PORT}
+
+            - DEBUG=${DEBUG}
+        restart: unless-stopped
+
+    ordering_agent_mcp_server:
+        image: registry.gitlab.pomscloud.ie/peter.csordas/premium-horse-feed/ordering_agent_mcp_server
+        build:
+            context: ./mcp_server
+            dockerfile: Dockerfile.prod
+        # ports:
+        #     - '8000'
+        environment:
+            - QDRANT_URL=http://qdrant:6333
+            - QDRANT_COLLECTION_PRODUCTS=${QDRANT_COLLECTION_PRODUCTS}
+            - QDRANT_COLLECTION_CUSTOMERS=${QDRANT_COLLECTION_CUSTOMERS}
+            - QDRANT_COLLECTION_SHIPPING_METHODS=${QDRANT_COLLECTION_SHIPPING_METHODS}
+            - QDRANT_COLLECTION_PAYMENT_METHODS=${QDRANT_COLLECTION_PAYMENT_METHODS}
+
+            - OPENAI_API_KEY=${OPENAI_API_KEY}
+            - OPENAI_ORGANIZATION=${OPENAI_ORGANIZATION}
+
+            - DEBUG=${DEBUG}
+        restart: unless-stopped
