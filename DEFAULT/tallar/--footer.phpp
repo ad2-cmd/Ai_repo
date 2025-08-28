@@ -1,0 +1,41 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the opening of the #site-footer div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty
+ * @since 1.0.0
+ */
+
+?>
+			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+
+				<div class="section-inner">
+
+					<div class="footer-credits">
+
+								
+				
+							<div><a href="https://akostallar.com/">&copy;ÁKOS&nbsp;TALLÁR</a></div><div><a href="https://akostallar.com/website-terms-of-use/">WEBSITE&nbsp;TERMS&nbsp;OF&nbsp;USE</a></div><div><a href="https://akostallar.com/privacy-notice/">PRIVACY&nbsp;NOTICE</a></div><div><a href="https://akostallar.com/cookie-policy/">COOKIE POLICY</a></div>
+							
+							
+							<div class="disclaimer">This website is operated by Tallár Law Firm (registered with the Budapest Bar under registration number: 5203) according to the laws and internal regulations relating to lawyers which may be found on the websites  <a href="https://www.magyarugyvedikamara.hu">www.magyarugyvedikamara.hu</a> and <a href="https://www.bpugyvedikamara.hu">www.bpugyvedikamara.hu</a> along with information on client rights.</div>
+							
+						<!-- .footer-copyright -->
+
+						
+					</div><!-- .footer-credits -->
+
+					
+				</div><!-- .section-inner -->
+
+			</footer><!-- #site-footer -->
+
+		<?php wp_footer(); ?>
+
+	</body>
+</html>
